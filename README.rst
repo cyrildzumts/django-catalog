@@ -12,7 +12,7 @@ For a detailed documentation please have a look in the "docs" directory.
 Quick start :
 -------------
 
-1. Add "cart" to your INSTALLED_APPS setting like this :
+1. Add "catalog" to your INSTALLED_APPS setting like this :
 	INSTALLED_APPS = [
 		...
 		'catalog',
