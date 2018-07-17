@@ -1,0 +1,22 @@
+{% with product.phablet as phablet%}
+<div>
+  Ecran : {{phablet.screen}}" <br />
+  {% if phablet.front_camera is not None%}
+  Camera Avant  : {{phablet.front_camera}}MP <br />
+  {%endif%}
+  {%if phablet.rear_camera is not None%}
+  Camera Arrière  : {{phablet.rear_camera}}MP <br />
+  {%endif%}
+  Système D'exploitation : {{phablet.system}} <br />
+  Memoire Interne : {{phablet.memory}}Go<br />
+  RAM : {{phablet.ram_memory}}Go<br />
+  {% if phablet.extern_sdcard is True%}
+  Support Carte memoire Externe : Oui
+  {%else%}
+  Support Carte memoire Externe : Non
+  {%endif%}
+  <br />
+  Carte SIM : {{phablet.sim_card}}<br />
+  Battérie : {{phablet.battery}}mAh <br /><br />
+</div>
+{%endwith%}

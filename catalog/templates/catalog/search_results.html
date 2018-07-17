@@ -1,0 +1,21 @@
+{% extends "flat_minimal_base.html" %}
+    
+    {% block MAINCONTENT %}
+
+            <div class="flat-search-result flat-row">
+                <p> Resultat de la recherche : </p>
+                <div class="product-list">
+                    
+                        {%if results%}
+                            {% for p  in results %}
+                                {% include "tags/product_box_flat.html" %}
+                            
+                            {% endfor %}
+                        {%else%}
+                            <p class="no-result"> Aucun article trouvé. </p>
+
+                        {%endif%}
+                </div>
+            </div>
+
+    {% endblock MAINCONTENT %}

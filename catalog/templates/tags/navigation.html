@@ -1,0 +1,20 @@
+<div class="navbar-header">
+  <a class="navbar-brand" href="{% url 'catalog:index'%}"> Demosite </a></li>
+</div>
+<ul class="nav navbar-nav">
+  <li class="active"><a href="{% url 'catalog:index'%}"> Acceuille </a></li>
+  <li><a href="{% url 'catalog:index'%}"> E-Shop </a></li>
+  <li><a href="{% url 'polls:index'%}"> Polls </a></li>
+  <li><a href="{% url 'polls:index'%}"> Nous contacter </a></li>
+  <li><a href="{% url 'accounts:user_account'%}"> Mon Compte </a></li>
+  <li>
+    {% if user.is_authenticated %}
+      <a href="{% url 'accounts:logout' %}"> Se déconnecter </a>
+    {% else %}
+      <a href="{% url 'accounts:register' %}"> Creer un Compte </a>
+    </li>
+    <li>
+      <a href="{% url 'accounts:login' %}"> Se connecter </a>
+    {% endif %}
+  </li>
+</ul>

@@ -1,0 +1,19 @@
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{p.name}} </div>
+          <div class="panel-body">
+            <div class="img-wrapper">
+              <a href="{{p.get_absolute_url}}">
+                <img class="group list-group-image img-responsive center-block" src="{{p.image.url}}"   alt="{{p.name}}">
+              </a>
+            </div>
+          </div>
+          <div class="panel-footer">
+            Prix : {{p.price}} CFA
+            <a href="{% url 'wishlist:add_to_wishlist' p.id  %}">
+              <span class="glyphicon glyphicon-heart-empty"></span> 
+            </a>
+          </div>
+        </div>
+    </div>

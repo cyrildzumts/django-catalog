@@ -1,0 +1,211 @@
+{% extends "base_flat.html" %}
+
+{% block ASIDE_CONTENT %} 
+
+<div class="menu">
+
+    
+            <ul class="listview bordered">
+                    <li class="list-item">
+                        Element 1
+                    </li>
+                    <li class="list-item parent">
+                        Element 2
+                        <ul class="listview bordered">
+                                <li class="list-item">
+                                    Voir tout
+                                </li>
+                                <li class="list-item">
+                                    Element 2
+                                </li>
+                                <li class="list-item active parent">
+                                    Element 3
+                                    <ul class="listview bordered">
+                                            <li class="list-item">
+                                                    Voir tout
+                                            </li>
+                                            <li class="list-item">
+                                                Element 2
+                                            </li>
+                                            <li class="list-item active">
+                                                Element 3
+                                            </li>
+                                            <li class="list-item">
+                                                Element 4
+                                            </li>
+                                    </ul>
+                                </li>
+                                <li class="list-item">
+                                    Element 4
+                                </li>
+                        </ul>
+                    </li>
+                    <li class="list-item">
+                        Element 3
+                    </li>
+                    <li class="list-item active">
+                        Element 4
+                    </li>
+            </ul>
+            <div class="listview bordered">
+                    
+                    <div class="list-item">
+                        Element 1
+                    </div>
+                    <div class="list-item active parent">
+                        <div class="list-header">
+                            Sub List Element 2
+                        </div>
+
+                        <ul class="listview">
+                            <li class="list-item">
+                                Element 1
+                            </li>
+                            <li class="list-item">
+                                Element 2
+                            </li>
+                            <li class="list-item active">
+                                Element 3
+                            </li>
+                            <li class="list-item">
+                                Element 4
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-item">
+                        Element 3
+                    </div>
+                    <div class="list-item">
+                        Element 4
+                    </div>
+                </div>
+                <ul class="listview bordered">
+                        <li class="list-item">
+                            Element 1
+                        </li>
+                        <li class="list-item parent">
+                            Element 2
+                            <ul class="listview horizontal bordered">
+                                    <li class="list-item">
+                                        Element 1
+                                    </li>
+                                    <li class="list-item">
+                                        Element 2
+                                    </li>
+                                    <li class="list-item active">
+                                        Element 3
+                                    </li>
+                                    <li class="list-item">
+                                        Element 4
+                                    </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            Element 3
+                        </li>
+                        <li class="list-item active">
+                            Element 4
+                        </li>
+                </ul>
+
+
+</div>
+
+
+{% endblock ASIDE_CONTENT %}
+
+
+{% block CONTENT %}
+<div class="site-card flex-row bg-niagara">
+        <div class="flex-row flex-center">
+                <span> Osez être différent </span>
+        </div>
+</div> 
+
+<div class="flex-row">
+    <div class="flat-col-xs-6 flat-col-md-4">
+            <div class="listview">
+                    <div class="collapsible bordered">
+                            <div class="header">
+                                LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+            </div>
+    </div>
+    <div class="flat-col-xs-6 flat-col-md-4">
+            <div class="listview">
+                    <div class="collapsible  bordered">
+                            <div class="header">
+                                    LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+                    <div class="collapsible bordered">
+                            <div class="header">
+                                    LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+                    <div class="collapsible bordered">
+                            <div class="header">
+                                LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<div class="flex-row">
+    <div class="flat-col-xs-6 flat-col-md-4">
+        
+        <div class="listview">
+                <div class="label">
+                        Accordion Demo
+                </div>
+            <div class="accordion">
+                    <div class="collapsible  bordered">
+                            <div class="header">
+                                    LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+                    <div class="collapsible bordered">
+                            <div class="header">
+                                    LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+                    <div class="collapsible bordered">
+                            <div class="header">
+                                LYSHOP APPERCU
+                            </div>
+                            <div class="content">
+                                {% lorem 2 %}
+                            </div>
+                    </div>
+            </div>
+            <div class="js-create flat-btn">
+                Create Collapsible
+            </div>
+            <div id="accordion-container" class="accordion">
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock CONTENT %}
+

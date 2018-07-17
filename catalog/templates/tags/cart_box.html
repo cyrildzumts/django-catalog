@@ -1,0 +1,74 @@
+{% load cart_tags %}
+
+{% cart_box request as cart_count %}
+
+<div class="dropdown">
+    <a class="link-icon" href="{% url 'cart:show_cart' %}">
+        <span class="cart-button dropdown-toggle glyphicon glyphicon-shopping-cart" data-toggle="dropdown">
+        </span>
+        {% if cart_count.count > 0 %}
+        <span class="cart-badge"> 
+            ({{ cart_count.count }})
+        </span>
+        {%endif%}
+    </a>
+    <div id="cart-preview" class="dropdown-content">
+        {% for cartItem in cart_box.cartItems %}
+        <div class="cart-menu-entry flex-container" data-itemid={{cartItem.product.id}}>
+            <div class="menu-img">
+                <img class="img-responsive" src="{{cartItem.image.url}}" alt="">
+            </div>
+            <div class="menu-entry-infos">
+                    <p>{{cartItem.name}}</p>
+                    <p>{{cartItem.price}} FCFA</p>
+                    <p>{{cartItem.quantity}}</p>
+            </div> 
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% comment "" %}
+<a class="link-icon" href="{% url 'cart:show_cart' %}">
+    <span class="cart-button dropdown-toggle glyphicon glyphicon-shopping-cart" data-toggle="dropdown">
+    </span>
+    {% if cart_count.count > 0 %}
+    <span class="cart-badge"> 
+        ({{ cart_count.count }})
+    </span>
+    {%endif%}
+</a>
+{% if user.is_authenticated %}
+
+<ul class="dropdown-menu cart-dropdown bg-ebony" >
+    {% for cartItem in cart_box.cartItems %}
+    <li class="cart-menu-entry flex-container" data-itemid={{cartItem.product.id}}>
+        <div class="menu-img">
+            <img class="img-responsive" src="{{cartItem.image.url}}" alt="">
+        </div>
+        <div class="menu-entry-infos">
+                <p>{{cartItem.name}}</p>
+                <p>{{cartItem.price}} FCFA</p>
+                <p>{{cartItem.quantity}}</p>
+        </div>
+        
+        
+    </li>
+
+  {% endfor %}
+  <li class="divider">
+
+  </li>
+
+  <li class="cart-menu-entry cart-menu-footer flex-container bg-ebonyclay">
+    <a class="btn btn-default cart-link" href="{% url 'cart:show_cart' %}">Voir</a>
+    <span class="space"></span>
+    <button type="button" class=" btn btn-default close-btn" data-dismiss="cart-dropdown">Fermer</button>
+  </li>
+</ul>
+
+{% endif %}
+
+
+{% endcomment %}

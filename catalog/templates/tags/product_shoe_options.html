@@ -1,0 +1,23 @@
+{% with product as shoe %}
+<div class="product--options flex-column">
+    <div class="shoe-color-list">
+        <div class="choice-color"> Couleur : </div>
+        <div class="shoe-colors-list flex-row">
+            {% for color in shoe.get_color %}
+                <span class="color-entry js-size-entry" data-color={{color}}>{{color}}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="shoe--size">
+        <div class="choice-size">Pointures : </div>
+        <div class="shoe-size-list flex-row">
+            {% for size in shoe.get_size %}
+                <span class="size-entry js-size-entry" data-size={{size}}>{{size}}</span>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+</div>
+
+{%endwith%}

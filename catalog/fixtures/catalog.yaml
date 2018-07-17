@@ -1,0 +1,338 @@
+-   model: catalog.category
+    pk: 1
+    fields: {name: Mode, slug: mode, parent: null, description: Categorie Mode, is_active: true,
+        meta_keywords: 'mode, fashion, sacs, sac, chaussures ...', meta_description: "Nous
+            vous proposons des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12
+            09:08:42.275481+00:00', updated_at: ! '2016-08-12 09:08:42.275570+00:00'}
+-   model: catalog.category
+    pk: 2
+    fields: {name: Smartphone, slug: smartphone, parent: null, description: Categorie
+            Smartphone, is_active: true, meta_keywords: 'smartphone, tablettes', meta_description: "Nous
+            vous proposons des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12
+            09:09:16.116694+00:00', updated_at: ! '2016-08-12 09:09:16.116755+00:00'}
+-   model: catalog.category
+    pk: 3
+    fields: {name: Parfumerie, slug: parfumerie, parent: null, description: Category
+            Parfumerie, is_active: true, meta_keywords: "parfum, parfums, huile, cr\xEAme,
+            lait, parf\xFBmerie", meta_description: "Nous vous proposons des produits
+            cosmetiques de qualit\xE9", created_at: ! '2016-08-12 09:09:47.514067+00:00',
+        updated_at: ! '2016-08-12 09:09:47.514339+00:00'}
+-   model: catalog.category
+    pk: 4
+    fields: {name: Chaussures, slug: chaussures, parent: 1, description: Categorie
+            Chaussures, is_active: true, meta_keywords: 'loafer, ballerine, h&m, chaussure',
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9",
+        created_at: ! '2016-08-12 09:11:16.694666+00:00', updated_at: ! '2016-08-12
+            09:11:16.694727+00:00'}
+-   model: catalog.category
+    pk: 5
+    fields: {name: Tablettes, slug: tablettes, parent: 2, description: Categorie  Tablettes,
+        is_active: true, meta_keywords: 'smartphone, tablettes', meta_description: "Nous
+            vous proposons des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12
+            09:12:37.470221+00:00', updated_at: ! '2016-08-12 09:12:37.470317+00:00'}
+-   model: catalog.category
+    pk: 6
+    fields: {name: Smartphones, slug: smartphones, parent: 2, description: Categorie
+            Smartphones, is_active: true, meta_keywords: 'smartphone, tablettes',
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9",
+        created_at: ! '2016-08-12 09:13:43.778682+00:00', updated_at: ! '2016-08-12
+            09:13:43.778832+00:00'}
+-   model: catalog.category
+    pk: 7
+    fields: {name: Eaux de Parfums, slug: parfumerie_edp, parent: 3, description: Categorie
+            Eau de Parfum, is_active: true, meta_keywords: "parfum, parfums, huile,
+            cr\xEAme, lait, parf\xFBmerie", meta_description: "Nous vous proposons
+            des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12 09:14:44.514760+00:00',
+        updated_at: ! '2016-08-12 09:14:44.514823+00:00'}
+-   model: catalog.category
+    pk: 8
+    fields: {name: Eaux de Toilettes, slug: parfumerie_edt, parent: 3, description: Categorie
+            Eau de Toilettes, is_active: true, meta_keywords: "parfum, parfums, huile,
+            cr\xEAme, lait, parf\xFBmerie, calvin klein, Obssession", meta_description: "Nous
+            vous proposons des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12
+            09:15:28.385090+00:00', updated_at: ! '2016-08-12 09:15:28.385183+00:00'}
+-   model: catalog.category
+    pk: 9
+    fields: {name: Ballerine, slug: chaussures-ballerine, parent: 4, description: Categorie
+            Ballerine, is_active: true, meta_keywords: 'loafer, ballerine, h&m, chaussure',
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9",
+        created_at: ! '2016-08-12 09:22:28.816384+00:00', updated_at: ! '2016-08-12
+            09:22:28.816451+00:00'}
+-   model: catalog.category
+    pk: 10
+    fields: {name: Talons, slug: chaussures-talons, parent: 4, description: Categorie
+            Talons, is_active: true, meta_keywords: 'talon, h&m, chaussure', meta_description: "Nous
+            vous proposons des produits cosmetiques de qualit\xE9", created_at: ! '2016-08-12
+            09:23:33.807394+00:00', updated_at: ! '2016-08-12 09:23:33.807498+00:00'}
+-   model: catalog.category
+    pk: 11
+    fields: {name: "Sacs \xE0 main", slug: sacs, parent: 1, description: "Categorie
+            Sac \xE0 main", is_active: true, meta_keywords: 'mode, fashion, sacs,
+            sac', meta_description: "Nous vous proposons des produits cosmetiques
+            de qualit\xE9", created_at: ! '2016-08-12 09:24:38.782966+00:00', updated_at: ! '2016-08-12
+            09:24:38.783046+00:00'}
+-   model: catalog.baseproduct
+    pk: 1
+    fields:
+        name: Dior Homme Intense
+        brand: Dior
+        slug: dior_homme_intense
+        price: 80000
+        old_price: 0
+        sku: Parfum-Dior-Homme-Intense-450
+        meta_keywords: dior, intense, homme, parfum,
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 08:55:42.252392+00:00
+        updated_at: 2016-08-22 08:55:42.252486+00:00
+        description: Dior Homme Eau de Parfum
+        quantity: 2
+        sell_quantity: 0
+        sell_date: null
+        image: products/dior_intense_hxR8w9W.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 2
+    fields:
+        name: Obssession
+        brand: Calvin Klein
+        slug: calvin_klein_obssession
+        price: 50000
+        old_price: 0
+        sku: Obsession-EDP-100
+        meta_keywords: "parfum, parfums, huile, cr\xEAme, lait, parf\xFBmerie, calvin
+            klein, Obssession"
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:07:57.437913+00:00
+        updated_at: 2016-08-22 09:07:57.437969+00:00
+        description: Calvin Klein Obsession Eau de Parfum
+        quantity: 3
+        sell_quantity: 0
+        sell_date: null
+        image: products/Calvin-Klein-Obsession_hrmkYWK.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 3
+    fields:
+        name: Contradiction
+        brand: Calvin Klein
+        slug: calvin_klein_contradiction
+        price: 50000
+        old_price: 0
+        sku: Contradiction-EDP-100-F
+        meta_keywords: "parfum, parfums, huile, cr\xEAme, lait, parf\xFBmerie, calvin
+            klein, contradiction"
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:12:51.327759+00:00
+        updated_at: 2016-08-22 09:12:51.327813+00:00
+        description: Calvin Klein Contradiction Eau de Parfum
+        quantity: 2
+        sell_quantity: 0
+        sell_date: null
+        image: products/contradiction_rnffSYI.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 4
+    fields:
+        name: Passion Secrete
+        brand: Yves de Sistelle
+        slug: passion-screte
+        price: 40000
+        old_price: 0
+        sku: Passion-Secrete-EDP-100-F
+        meta_keywords: yves de sistelle, passion, secrete, intense, femme, parfum,eau
+            de parfum
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:14:29.857127+00:00
+        updated_at: 2016-08-22 09:14:29.857183+00:00
+        description: Passion Secrete Eau de Parfum
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/Passion-Secrete_Yves-de-Sistelle_IgYhIau.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 5
+    fields:
+        name: La Vie Est Belle
+        brand: "Lanc\xF4me"
+        slug: lancome_la_vie_est_belle
+        price: 80000
+        old_price: 0
+        sku: lancome-lavie-045-290
+        meta_keywords: "lancome, lanc\xF4me, intense, femme, parfum,eau de parfum"
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:16:12.838530+00:00
+        updated_at: 2016-08-22 09:16:12.838584+00:00
+        description: "Lanc\xF4me La Vie est Belle"
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/lavieestbelle_zXnioBW.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 6
+    fields:
+        name: Jour
+        brand: Boss
+        slug: boss_jour_femme
+        price: 80000
+        old_price: 0
+        sku: Boss-Jour-Femme-450
+        meta_keywords: "parfum, parfums, huile, cr\xEAme, lait, parf\xFBmerie, boss,
+            jour"
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:18:27.438448+00:00
+        updated_at: 2016-08-22 09:18:27.438560+00:00
+        description: Boss Jour , Coffret
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/bossjourset.png
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 7
+    fields:
+        name: Doriane Love
+        brand: Yves de Sistelle
+        slug: doriane-love
+        price: 30000
+        old_price: 0
+        sku: Doriane-Love-EDP-100-F
+        meta_keywords: doriane, love, homme, parfum,yves de sistelle
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:20:47.985224+00:00
+        updated_at: 2016-08-22 09:20:47.985285+00:00
+        description: Doriane Love Eau de Parfum
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/Yves_de_Sistelle-Doriane_Love_0ZJb19y.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [7]
+-   model: catalog.baseproduct
+    pk: 8
+    fields:
+        name: Ballerine Loafer H&M
+        brand: H&M
+        slug: ballerine_loafer_hm
+        price: 20000
+        old_price: 0
+        sku: loafer-hm-350-blk
+        meta_keywords: loafer, ballerine, h&m, chaussure
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:22:40.314195+00:00
+        updated_at: 2016-08-22 09:22:40.314261+00:00
+        description: Ballerine Loafer de chez H&M
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/loafer1_BhCtDMl.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [9]
+-   model: catalog.baseproduct
+    pk: 9
+    fields:
+        name: Talon H&M
+        brand: H&M
+        slug: talon-hm-045-330
+        price: 30000
+        old_price: 0
+        sku: Chaussures-HM-045-330
+        meta_keywords: talon, h&m, chaussure
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:34:33.675929+00:00
+        updated_at: 2016-08-22 09:34:33.675988+00:00
+        description: Talon de chez H&M
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/hmsand1.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [10]
+-   model: catalog.baseproduct
+    pk: 10
+    fields:
+        name: Moto G2
+        brand: Motorola
+        slug: moto-g2
+        price: 150000
+        old_price: 0
+        sku: Moto-G2-Black-1350
+        meta_keywords: moto, g2, smartphone, motorola, android
+        meta_description: "Nous vous proposons des produits cosmetiques de qualit\xE9"
+        created_at: 2016-08-22 09:36:53.966812+00:00
+        updated_at: 2016-08-22 09:36:53.966867+00:00
+        description: Motorola G2
+        quantity: 1
+        sell_quantity: 0
+        sell_date: null
+        image: products/motog2_ZyDr9Jn.jpg
+        is_available: true
+        is_bestseller: false
+        is_featured: true
+        categories: [6]
+-   model: catalog.phone
+    pk: 10
+    fields: {screen: 5.0, camera: 8, system: Android 6.0 (Marshmallow), memory: 8,
+        sim_card: 2, battery: Li-Ion 2070 mAh, frequency_band: GSM 850 / 900 / 1800
+            / 1900 - HSDPA 850 / 1900 / 2100, color: 3}
+-   model: catalog.shoe
+    pk: 9
+    fields: {material: Cuir, typ: Talon, size: '39', color: 2}
+-   model: catalog.shoe
+    pk: 8
+    fields: {material: Cuir, typ: Loafer, size: '38', color: 1}
+-   model: catalog.parfum
+    pk: 7
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 6
+    fields: {capacity: 30, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 5
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 4
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 3
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 2
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.parfum
+    pk: 1
+    fields: {capacity: 100, typ: EDP, gender: F}
+-   model: catalog.color
+    pk: 1
+    fields: {name: Bleu, value: '#0000FF'}
+-   model: catalog.color
+    pk: 2
+    fields: {name: Maron, value: '#895420'}
+-   model: catalog.color
+    pk: 3
+    fields: {name: Noir, value: '#000000'}

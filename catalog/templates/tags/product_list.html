@@ -1,0 +1,9 @@
+{% if recent_products %}
+<div class="container">
+  <div class="row">
+  {% for p in recent_products  %}
+      {% include "tags/product_box.html" %}
+  {% endfor %}
+  </div>
+</div><br>
+{% endif %}

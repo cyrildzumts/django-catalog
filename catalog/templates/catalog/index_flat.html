@@ -1,0 +1,85 @@
+{% extends "base_flat.html" %}
+{% load category_tags %}
+{% load catalog_tags %}
+{% load staticfiles %}
+{% load static %}
+
+{% block BANNER %}
+<div id="site-banner" class="flat-row">
+        {% include "tags/banner.html" %}
+ </div>
+{% endblock BANNER %}
+{%block CURRENT_CATEGORY_PATH%}
+
+{%endblock CURRENT_CATEGORY_PATH%}
+
+{% block ASIDE %}
+
+{% endblock ASIDE %}
+{% block MAINCONTENT %}
+
+<div class="flat-column ">
+    <div id="site-newproducts-ads relative">
+        <div class="flex-row">
+                <section class="title">
+                        <span>Nouveautées</span>
+                </section>
+        </div>
+        
+            <div  class="product-list js-galerie">
+                    {% get_home_items 0 as new_products %}
+                    {% for p in new_products %}
+                        {% include "tags/product_box_flat.html" %}
+                    {% endfor %}
+            </div>
+    </div>
+
+    
+        <div id="site-cat-nav-list" class="flex-row">
+        
+                <div class="flat-col-xs-12 flat-col-md-4">
+                        <div class="cat-entry">
+                                <section class="title">
+                                        <span>Parfumerie</span>
+                                </section>
+                                <section class="flat-row">
+                                        {% get_cat "Parfumerie" as p_cat %}
+                                        <a href="{{p_cat.get_absolute_url}}">
+                                                <img class="cat-entry--image" src="{% static 'images/parfum-bg.jpg' %}" alt="">
+                                        </a>
+                                </section>
+                        </div>
+                </div>
+                <div class="flat-col-xs-12 flat-col-md-4">
+                        <div class="cat-entry">
+                                <section class="title">
+                                        <span>Mode</span>
+                                </section>
+                                <section class="flat-row">
+                                        
+                                        {% get_cat "Mode" as m_cat %}
+                                        <a class="" href="{{m_cat.get_absolute_url}}">
+                                                <img class="cat-entry--image" src="{% static 'images/mode-bg.jpg' %}" alt="">
+                                                
+                                        </a>
+                                </section>
+                        </div>
+                </div>
+                <div class="flat-col-xs-12 flat-col-md-4">
+                        <div class="cat-entry">
+                                <section class="title">
+                                        <span>Cheveux</span>
+                                </section>
+                                <section class="flat-row">
+                                        {% get_cat "Beauty" as b_cat %}
+                                        <a href="{{b_cat.get_absolute_url}}">
+                                                <img class="cat-entry--image" src="{% static 'images/beauty-bg.jpg' %}" alt="">
+                                        </a>
+                                </section>
+                        </div>
+                </div>
+        </div>
+
+</div>
+
+{% endblock MAINCONTENT %}

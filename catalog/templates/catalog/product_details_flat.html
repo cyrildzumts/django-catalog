@@ -1,0 +1,52 @@
+{% extends "flat_minimal_base.html" %}
+{% block MAINCONTENT %}
+
+
+
+<div id="product-page">
+        
+    <div class="flat-col-xs-12 flat-col-md-6">
+            <div class="image-container">
+                    <img class="img-responsive" src="{{product.image.url}}" alt="{{product.name}}" />
+            </div>
+    </div>
+    <div class="flat-col-xs-12 flat-col-md-5">
+            <div class="product-infos" id="product-{{product.id}}" data-name="{{product.name}}" data-product-id="{{product.id}}" data-available="{{product.is_available}}">
+                    <section class="header">
+                        <div class="product--name"> <strong>{{product.name}}</strong> </div>
+                        <div class="product--brand">{{product.brand}}</div>
+                        <div class="description">
+                                <p>{{product.short_description}}</p>
+                        </div>
+                        <span class="divider"></span>
+                        <section class="">
+                                <div class="product--price"> <strong>{{product.price}} FCFA</strong></div>
+                                <span class="product--price-details"> <strong>* Frais d'envoi non inclus</strong></span>
+                        </section>
+                    </section>
+                    
+                    <section class="">
+
+                    </section>
+                    <section class="content">
+                        <div class="features">
+                                {% if product.template_name is not None%}
+                                {% include product.template_name %}
+                                {%endif%}
+                        </div>
+                    </section>
+                    <section class="footer">
+                        <div class="flat-column">
+                                        <span id="js-add-to-cart" class="flat-btn flat-cart-add-btn flat-add-btn" data-target="#product-{{product.id}}"><span class="glyphicon glyphicon-shopping-cart">  </span> AJOUTER AU PANIER </span>
+                                        <span id="js-add-to-wishlist" class="flat-link flat-btn flat-add-btn" data-target="#product-{{product.id}}"><span class="glyphicon glyphicon-heart-empty"></span> AJOUTER AUX FAVORIS </span>
+                        </div>
+                    </section>
+                    
+            </div>
+        
+        </div>
+    
+    
+</div>
+
+{% endblock MAINCONTENT%}

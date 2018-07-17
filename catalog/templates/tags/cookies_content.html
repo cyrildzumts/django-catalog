@@ -1,0 +1,19 @@
+<div id="cookies_content">
+  <h5> Cookies Contents </h5>
+  {% load  catalog_tags %}
+  <ul>
+    {% display_session request as session %}
+  {% for key in session.keys %}
+    <li>
+      Key : {{key}}
+    </li>
+  {% endfor %}
+
+  {% for item in session.items %}
+    <li>
+      Item: {{item}}
+    </li>
+  {% endfor %}
+
+  </ul>
+</div>

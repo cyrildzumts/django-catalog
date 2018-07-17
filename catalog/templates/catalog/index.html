@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load category_tags %}
+    {% block banner_content %}
+        <div class="container">
+            {% banners as banner %}
+            {% include "tags/banner.html" %}
+            
+        </div>
+    {% endblock banner_content %}
+
+    {% block PageContent %}
+ 
+        {% get_default_products as products %}
+            {% comment "" %}
+            
+            
+            <div class="container" >
+                <ul id="product-list" class="row centered sortable">
+                    {% for p  in products %}
+                    <li class="list-entry" data-brand="{{p.brand}}" data-price="{{p.price}}">
+                        {% include "tags/product_box_min.html" %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endcomment %}
+            {% comment "" %}
+            <div class="grid-flex">
+                {% for p  in products %}
+                    {% include "tags/product_box_min.html" %}
+                {% endfor %}
+            </div>
+            {% endcomment %}
+            
+
+
+    {% if products %}
+<div class="">
+  <div class="grid-flex">
+
+    <div class="navbar1 bordered hidden">
+            <div class="categories dropdown">
+                    <button class="dropbtn"> Catégorie <span class="glyphicon glyphicon-chevron-down"> </span></button>
+                    <div class="dropdown-content">
+                        <div class="header">
+                            <h2> Navigation</h2>
+                        </div>
+                        <div class="row">
+                                {% for category in current_category %}
+                                <div class="column">
+                                    <h3>{{category.name}}</h3>
+                                    <a href="{{category.get_absolute_url}}"> {{category.name}}</a>
+                                </div>
+                                {% endfor %}
+                        </div>
+                    </div>
+            </div>
+    </div> <!-- navbar1 End -->
+    <div class="list-flex vertical category-menu bordered">
+        <p class="text-center">Catégories</p>
+        <ul class="nav navbar">
+            <li><a href="">Voir tous les articles</a></li>
+            {% for category in current_category %}
+                <li><a href="{{category.get_absolute_url}}"> {{category.name}}</a></li>
+            {% endfor %}
+        </ul>   
+    </div> <!-- Category-Menu end -->
+    <div class="flex-container">
+        <div class="grid-flex" id="product-list">
+            
+          {% for p  in products %}
+              {% include "tags/product_box_min.html" %}
+          {% endfor %}
+        </div>
+    </div> <!-- Flex-container end -->
+  </div> <!-- Grid-Flex end -->
+
+</div>
+
+     
+
+  {% else %}
+      <p class="text-center">Il n'y a pas encore de produits disponible
+       dans cette catégorie 
+     </p>
+  {% endif %}
+    {% endblock PageContent %}
+

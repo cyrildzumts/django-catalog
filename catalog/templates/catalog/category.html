@@ -1,0 +1,86 @@
+{% extends "base_flat.html" %}
+{% load category_tags %}
+{% load catalog_tags %}
+
+{% block BANNER %}
+                 
+{% endblock BANNER %}
+
+{% block CATEGORY_PATH %}
+    {% comment "" %}
+    <div class="flat-row">
+            <ul class="breadcrumb">
+                    {% for cat in parent_cats  %}
+                        {% if forloop.last %}
+                        <li> {{cat.name}}</a></li>
+                        {% else %}
+                         <li> <a href="{{cat.get_absolute_url}}"> {{cat.name}}</a></li>
+                        {% endif %}
+                        
+                    {% endfor %}
+            </ul>
+    </div>
+    {% endcomment %}
+{% endblock CATEGORY_PATH %} 
+
+
+
+
+
+{% block ASIDE_CONTENT %} 
+                <div class="aside-content">
+                        {% include "tags/aside_content.html" %}
+                </div>
+
+{% endblock ASIDE_CONTENT %}
+
+
+{%block MAINCONTENT %}
+<div class="flat-col-xs-12 flat-col-md-10">
+    <div class="flat-row ">
+        
+        
+        <div class="flat-col-xs-12">
+                <div class="">
+                        <section id="" class="product-list">
+                            {% if products %}
+                              {% for p  in products %}
+                              {% include "tags/product_box_flat.html" %}
+                              {% endfor %}
+                            {% else %}
+                              <p class="text-center">
+                                Il n'y a pas de produits disponible
+                                dans cette catégorie 
+                              </p>
+                            {% endif %}
+                        </section>
+                
+                        <section class="footer">
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                  <li><a href="?page={{ page_obj.previous_page_number }}">precedent</a></li>
+                                {% endif %}
+                                <span class="current-page">
+                                  Page {{page_obj.number }} de {{paginator.num_pages}}.
+                                </span>
+                                {% if page_obj.has_next %}
+                                  <li><a href="?page={{ page_obj.next_page_number }}">next</a></li>
+                                {% endif %}
+                            </ul>
+                            {% if is_paginated %}
+                                Django Paginated
+                            {% else %}
+                                Django not Paginated
+                            {% endif %}
+                        </section>
+                    </div>
+        </div>
+
+    </div>
+    <div class="">
+        <section class="">
+             <span>Vue recemment <span class="fa fa-history"></span></span> 
+        </section>
+    </div>
+</div>
+{% endblock MAINCONTENT %}

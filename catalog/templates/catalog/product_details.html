@@ -1,0 +1,74 @@
+{% extends "base_flat.html" %}
+
+{%block banner_extra%}
+
+<div class="card-flat-category">
+  <ul class="breadcrumb">
+        {% for c in product.cats_path %}
+        <li><a href="{{c.get_absolute_url}}">{{c.name}}</a></li>
+        {% endfor %}
+  </ul>
+</div>
+{%endblock banner_extra%}
+
+{%block content_header%}
+    <div class="col-md-12 col-sm-12 col-xs-12 flex-container bg-ebony">
+        <div class="p-product-name">{{product.name}} 
+          {%if product.is_available is False%}
+            <span class="not-in-stock"> Epuisé !!! </span>
+          {%endif%}
+        </div>
+    </div>
+{%endblock content_header%}
+
+
+{% block MAINCONTENT %}
+<div class="product-card bordered">
+  
+  <div class="flat-product-image bordered">
+    <div class="image-container">
+       <img class="img-responsive" src="{{product.image.url}}" alt="{{product.name}}" />
+    </div>
+  </div>
+  <div class="product-details bordered">
+
+    <div class="detail-content">
+         <p>Marque: <strong><em>{{product.brand}}</em> </strong></p>
+      
+        {% if product.size is not None %}
+          <p>Taille: {{product.size}}</p>
+        {%endif%}
+        {% if product.template_name is not None%}
+        {% include product.template_name %}
+        {%endif%}
+          {% if product.old_price is True %}
+        <p class="invalid">Coûtait : {{product.old_price}} CFA </p>
+        {% endif %}
+        <p>Prix : <strong>{{product.price}} CFA </strong></p>
+
+        <div class="popover" id="cart-popover" data-toggle="popover" title="Message" data-content="">
+
+        </div>
+        <div class="btn-box" data-itemid="{{product.id}}" data-name="{{product.name}}">
+          <span class="add-to-cart add-btn text-box glyphicon glyphicon-shopping-cart bordered bg-success" 
+            data-available="{{product.is_available}}" data-itemid="{{product.id}}" title="Ajouter dans le Panier">
+            Ajouter dans le panier
+          </span>
+          <span class="add-to-wishlist add-btn text-box glyphicon glyphicon-heart bordered" 
+             data-itemid="{{product.id}}" data-name="{{product.name}}" title="Ajouter dans la wishlist">
+            Ajouter dans la wishlist
+        </span>
+        </div>
+
+        <div class="description">
+          <h3> Description du produit </h3>
+          <p>{{product.description}}</p>
+        </div>
+        
+
+    </div>
+      
+  </div>
+
+</div>
+{% endblock MAINCONTENT%}

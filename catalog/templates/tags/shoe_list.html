@@ -1,0 +1,9 @@
+{% if recent_shoes %}
+<div class="card-fluid">
+  <div class="row centered">
+  {% for p in recent_shoes %}
+      {% include "tags/product_box.html" %}
+  {% endfor %}
+  </div>
+</div><br>
+{% endif %}

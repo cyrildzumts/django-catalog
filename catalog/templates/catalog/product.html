@@ -1,0 +1,71 @@
+{% extends "catalog.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    Categorie:
+      <ol class="breadcrumb">
+        {% for c in p.cats_path %}
+        <li><a href="{{c.get_absolute_url}}">{{c.name}}</a></li>
+        {% endfor %}
+      </ol>
+
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="product_box center-block">
+        <div class="img-wrapper">
+          <img class="img-responsive center-block" src="{{p.image.url}}"  alt="{{p.name}}" />
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+
+      <h1> {{p.name}} </h1>
+        Marque: <em>{{p.brand}}</em>
+      <br />
+      {% if p.size is not None %}
+        Taille: {{p.size}}
+      {%endif%}
+      {% if p.template_name is not None%}
+      {% include p.template_name %}
+      {%endif%}
+        <br />
+        {% if p.old_price is True %}
+        <p class="invalid">Coûtait : {{p.old_price}} CFA </p> <br />
+        {% endif %}
+        Prix : {{p.price}} CFA
+        <br /><br />
+
+        <button type="button" class="btn" name="button">
+            <span class="glyphicons glyphicons-cart-in"></span>Add
+        </button>
+
+        <form method="post" action="." class="addToCart">{% csrf_token %}
+
+          <div class="form-group">
+            {{form.as_p}}
+          <!--<label for="{{form.quantity.id_for_quantity}}"> Quantité:</label> -->
+          <br />
+          </div>
+          <input type="submit" class="btn"  name="submit" value="Ajouter dans le Panier">
+        </form>
+        <br /><br />
+        <div class="cb"></div>
+        <h3> Description du produit </h3>
+            {{p.description}}
+    </div>
+  </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+<div class="flat-col-xs-6  flat-col-md-2 flat-col-lg-2">
+
+
+<div class="product" data-brand="{{p.brand}}" data-price="{{p.price}}" data-viewcount="{{p.view_count}}">
+        {% if p.is_available is False %}
+                <span class="label">Stock épuisé</span>
+        {%elif p.is_recent is True %}
+                <span class="label">Nouveau</span> 
+        {% endif %}
+        
+        <div class="image">
+                <a class="image--link" href="{{p.get_absolute_url}}">
+                        <div class="box"> 
+                                <img class="img-responsive" src="{{p.image.url}}">              
+                        </div>
+                </a>
+               
+        </div>
+        
+        <div class="flat-column">
+                <span class="product--name">{{p.name}}</span>
+                <!--<div class="mat-entry">Quantité : {{item.quantity}}</div> -->
+                <span class=""> <span class="product--price"> <strong>{{p.price}} FCFA</strong> </span></span>
+        </div>
+
+</div>
+</div>

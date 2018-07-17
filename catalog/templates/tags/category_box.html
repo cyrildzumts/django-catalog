@@ -1,0 +1,39 @@
+{% load category_tags %}
+
+  <nav class="navbar navbar-default">
+    <!-- If the current category has a parent, print its direct parent name-->
+    <!-- and its sibling -->
+    <ul class="nav nav-cat">
+        {%if current_category.parent is not None%}
+        <li><a  href="{{current_category.parent.get_absolute_url}}">{{current_category.parent.name}}</a>
+         <ul class="nav-cat nav-cat-child">
+            {% for category in current_category.parent.subcategories %}
+            {%if category == current_category%}
+              <li class="active">
+                <a  href="{{category.get_absolute_url}}">{{category.name}}</a>
+              {%if category.subcategories.exists%}
+                  <ul class="nav-cat ">
+                    {%for subcat in category.subcategories%}
+                      <li><a  href="{{subcat.get_absolute_url}}">{{subcat.name}}</a></li>
+                    {%endfor%}
+                  </ul>
+              {%endif%}
+              </li>
+            {%else%}
+              <li><a  href="{{category.get_absolute_url}}">{{category.name}}</a></li>
+            {%endif%}
+          {% endfor %}
+         </ul>
+        </li>
+
+        {%else%}
+            <li><a  href="{{current_category.get_absolute_url}}">{{current_category.name}}</a>
+              <ul class="nav nav-cat">
+                  {%for subcat in current_category.subcategories%}
+                  <li><a  href="{{subcat.get_absolute_url}}">{{subcat.name}}</a></li>
+              {%endfor%}
+              </ul>
+            </li>
+        {%endif%}
+    </ul>
+  </nav>

@@ -1,0 +1,9 @@
+{% if recent_phones %}
+<div class="card-fluid">
+  <div class="row centered">
+  {% for p in recent_phones %}
+      {% include "tags/product_box.html" %}
+  {% endfor %}
+  </div>
+</div><br>
+{% endif %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load catalog_tags %}
+
+
+{% block site_wrapper %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="sidebar col-sm-2 col-md-2">
+      {% block category_block %}
+
+      {% endblock category_block %}
+    </div>
+    <div class="col-sm-10 col-md-10 content">
+
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+  </div>
+
+</div>
+{% endblock %}
